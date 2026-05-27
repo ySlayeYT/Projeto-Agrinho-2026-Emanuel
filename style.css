@@ -1,0 +1,1051 @@
+/* =========================================================
+   CONFIGURAÇÕES GERAIS & VARIÁVEIS HIGH-END FUTURISTA
+========================================================= */
+:root {
+    --primary-neon: #2ed573;
+    --primary-glow: rgba(46, 213, 115, 0.5); /* Brilho intensificado */
+
+    --gold-lux: #d4af37;
+    --gold-glow: rgba(212, 175, 55, 0.35); /* Brilho intensificado */
+
+    --bg-glass: rgba(10, 25, 14, 0.65); /* Mais transparente para ver o grid */
+
+    --border-glass: rgba(255, 255, 255, 0.07);
+    --border-lux: rgba(214, 175, 55, 0.25);
+    
+    --cyber-grid: rgba(46, 213, 115, 0.04); /* Cor da grade futurista */
+
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Poppins", sans-serif;
+
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    color: var(--text-main);
+
+    overflow-x: hidden;
+
+    background-color: #030805; /* Fundo levemente mais escuro para destacar o neon */
+
+    position: relative;
+}
+
+/* =========================================================
+   SISTEMA DE FUNDO ANIMADO PREMIUM & HOLOGRÁFICO
+========================================================= */
+.animated-bg-container {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: -2;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+.moving-background {
+    position: absolute;
+
+    top: -5%;
+    left: -5%;
+
+    width: 110%;
+    height: 110%;
+
+    background-image: url("14258042-campos-agricolas-de-plantacao-de-batata-agroindustria-e-agronegocio-bela-paisagem-rural-europeia-agricultura-organica-colhendo-o-primeiro-plantio-de-batata-agricultura-e-agroindustria-foto.jpg");
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    will-change: transform;
+
+    animation: luxuryPan 32s infinite ease-in-out alternate;
+
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* =========================================================
+   OVERLAY TECNOLÓGICO (COM GRID E SCANLINE)
+========================================================= */
+.tech-overlay {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    /* Degradê base */
+    background: linear-gradient(
+        135deg,
+        rgba(8, 22, 11, 0.88) 0%,
+        rgba(14, 33, 19, 0.78) 60%,
+        rgba(5, 12, 6, 0.92) 100%
+    ),
+    /* Malha Holográfica (Grid Cyber) */
+    linear-gradient(var(--cyber-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--cyber-grid) 1px, transparent 1px);
+    
+    background-size: 100% 100%, 40px 40px, 40px 40px; /* Tamanho do grid */
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+/* Linha de Scanner Futurista */
+.tech-overlay::after {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary-neon);
+    box-shadow: 0 0 25px 5px var(--primary-glow);
+    opacity: 0.4;
+    animation: scanline 8s linear infinite;
+}
+
+@keyframes scanline {
+    0% { top: -10%; opacity: 0; }
+    10% { opacity: 0.5; }
+    90% { opacity: 0.5; }
+    100% { top: 110%; opacity: 0; }
+}
+
+/* =========================================================
+   ANIMAÇÃO KEN BURNS
+========================================================= */
+@keyframes luxuryPan {
+    0% { transform: scale(1.02) translate(0, 0) rotate(0deg); }
+    50% { transform: scale(1.07) translate(-1%, 1%) rotate(0.5deg); }
+    100% { transform: scale(1.03) translate(1%, -1%) rotate(-0.5deg); }
+}
+
+/* =========================================================
+   NAVBAR PREMIUM
+========================================================= */
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 75px;
+
+    background: rgba(8, 20, 11, 0.75);
+
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 6%;
+
+    z-index: 1000;
+
+    border-bottom: 1px solid var(--border-lux);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 1px 15px var(--gold-glow);
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #ffffff;
+
+    letter-spacing: 1px;
+}
+
+.logo-highlight {
+    color: var(--gold-lux);
+
+    text-shadow: 0 0 15px var(--gold-glow), 0 0 30px var(--gold-glow);
+}
+
+.nav-links {
+    display: flex;
+
+    gap: 35px;
+}
+
+.nav-links a {
+    position: relative;
+
+    padding: 5px 0;
+
+    text-decoration: none;
+
+    color: var(--text-muted);
+
+    font-size: 14px;
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+    text-transform: uppercase; /* Toque mais cibernético/HUD */
+
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 50%; /* Nasce do centro */
+
+    width: 0;
+    height: 2px;
+
+    background: var(--primary-neon);
+
+    box-shadow: 0 0 12px var(--primary-neon);
+
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* =========================================================
+   ESTRUTURA DAS SEÇÕES
+========================================================= */
+.main-content {
+    margin-top: 75px;
+}
+
+.page-section {
+    min-height: calc(100vh - 75px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 80px 20px;
+}
+
+/* =========================================================
+   REVEAL SCROLL
+========================================================= */
+.visual-reveal {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition:
+        opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.visual-reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+.dashboard-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    gap: 40px;
+
+    width: 100%;
+    max-width: 1140px;
+
+    flex-wrap: wrap;
+}
+
+/* =========================================================
+   CARDS GLASSMORPHISM (COM LEVITAÇÃO MAGNÉTICA)
+========================================================= */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 480px;
+    min-height: 560px;
+
+    padding: 40px;
+
+    background: var(--bg-glass);
+
+    border: 1px solid var(--border-glass);
+    border-radius: 28px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -2px 20px rgba(46, 213, 115, 0.05); /* Glow interno sutil */
+
+    /* Efeito de levitação constante */
+    animation: floatCard 6s ease-in-out infinite alternate;
+    
+    transition:
+        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* Delay no segundo card para levitarem fora de sincronia */
+.premium-card-right {
+    animation-delay: -3s;
+}
+
+@keyframes floatCard {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-12px); }
+}
+
+.premium-card-left {
+    border-left: 2px solid var(--primary-neon);
+    box-shadow: -5px 0 30px -10px var(--primary-glow), 0 25px 50px rgba(0,0,0,0.7);
+}
+
+.premium-card-right {
+    border-right: 2px solid var(--gold-lux);
+    box-shadow: 5px 0 30px -10px var(--gold-glow), 0 25px 50px rgba(0,0,0,0.7);
+}
+
+.card:hover {
+    animation-play-state: paused; /* Pausa levitação no hover */
+    transform: translateY(-8px) scale(1.02);
+
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), inset 0 0 30px rgba(255, 255, 255, 0.05);
+}
+
+/* =========================================================
+   BRAND ZONE
+========================================================= */
+.brand-zone {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.brand-name {
+    font-size: 26px;
+    font-weight: 700;
+
+    background: linear-gradient(120deg, #ffffff, #88ffba, #2ed573);
+    background-size: 200% auto;
+    
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    animation: shineText 4s linear infinite;
+}
+
+@keyframes shineText {
+    to { background-position: 200% center; }
+}
+
+.badge-pro {
+    padding: 4px 10px;
+
+    background: linear-gradient(135deg, var(--gold-lux), #fff3b0);
+
+    color: #050f07;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    box-shadow: 0 0 20px var(--gold-glow);
+    border: 1px solid #fff;
+}
+
+.subtitle {
+    margin-bottom: 35px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* =========================================================
+   MÉTRICAS
+========================================================= */
+.metric-group {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    flex-grow: 1;
+}
+
+.metric-info {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+
+    color: #e2e8f0;
+
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.slider-value {
+    color: var(--primary-neon);
+
+    font-family: monospace;
+    font-size: 15px;
+    text-shadow: 0 0 10px var(--primary-glow);
+}
+
+/* =========================================================
+   SLIDERS FUTURISTAS
+========================================================= */
+.slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 38px;
+
+    padding: 0 6px;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Trilhas iluminadas */
+.water-track { background: linear-gradient(90deg, rgba(43, 140, 255, 0.4), rgba(0, 0, 0, 0.8)); }
+.bio-track { background: linear-gradient(90deg, rgba(46, 213, 115, 0.4), rgba(0, 0, 0, 0.8)); }
+.solo-track { background: linear-gradient(90deg, rgba(212, 175, 55, 0.4), rgba(0, 0, 0, 0.8)); }
+.energy-track { background: linear-gradient(90deg, rgba(255, 165, 0, 0.4), rgba(0, 0, 0, 0.8)); }
+
+.custom-slider {
+    appearance: none;
+    -webkit-appearance: none;
+
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+    height: 100%;
+
+    background: transparent;
+    cursor: pointer;
+}
+
+.custom-slider:focus {
+    outline: none;
+}
+
+.custom-slider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 28px;
+    height: 28px;
+
+    border: 2px solid var(--primary-neon);
+    border-radius: 50%;
+
+    background: #000;
+    
+    box-shadow:
+        0 0 15px var(--primary-glow),
+        inset 0 0 5px var(--primary-neon);
+
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s;
+}
+
+.custom-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.3);
+    box-shadow: 0 0 25px var(--primary-neon), inset 0 0 10px var(--primary-neon);
+    background: var(--primary-neon);
+}
+
+/* =========================================================
+   BOTÃO CIBERNÉTICO
+========================================================= */
+.btn-report {
+    position: relative;
+
+    margin-top: 35px;
+    padding: 18px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--primary-neon);
+    border-radius: 16px;
+
+    background: rgba(27, 122, 63, 0.2);
+    backdrop-filter: blur(5px);
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 0 20px rgba(46, 213, 115, 0.2), inset 0 0 10px rgba(46, 213, 115, 0.1);
+}
+
+.btn-report span {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-glow {
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(46, 213, 115, 0.8),
+        transparent
+    );
+
+    transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-report:hover {
+    transform: translateY(-3px);
+    background: rgba(27, 122, 63, 0.8);
+    box-shadow: 0 15px 35px var(--primary-glow), inset 0 0 20px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 10px #fff;
+}
+
+.btn-report:hover .btn-glow {
+    left: 100%;
+}
+
+/* =========================================================
+   IES SCORE HOLOGRÁFICO
+========================================================= */
+.right-card {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.ies-header {
+    width: 100%;
+    text-align: center;
+}
+
+.ies-title {
+    margin-bottom: 10px;
+
+    color: var(--text-muted);
+
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.ies-score-container {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+    margin-bottom: 12px;
+}
+
+.ies-score {
+    font-family: monospace; /* Fonte mais futurista para números */
+    font-size: 78px;
+    font-weight: 700;
+    line-height: 1;
+
+    color: var(--gold-lux);
+    text-shadow: 0 0 40px var(--gold-glow), 0 0 10px #fff;
+    
+    animation: glitchHolo 5s infinite;
+}
+
+@keyframes glitchHolo {
+    0%, 95%, 100% { opacity: 1; text-shadow: 0 0 40px var(--gold-glow), 0 0 10px #fff; }
+    96% { opacity: 0.8; text-shadow: -3px 0 10px red, 3px 0 10px cyan; }
+    97% { opacity: 1; text-shadow: 0 0 40px var(--gold-glow), 0 0 10px #fff; }
+    98% { opacity: 0.5; text-shadow: 3px 0 10px red, -3px 0 10px cyan; }
+    99% { opacity: 1; text-shadow: 0 0 40px var(--gold-glow), 0 0 10px #fff; }
+}
+
+.ies-max {
+    margin-left: 4px;
+    color: var(--text-muted);
+    font-size: 24px;
+    font-family: monospace;
+}
+
+.status-badge {
+    padding: 6px 20px;
+
+    background: rgba(212, 175, 55, 0.08);
+
+    color: var(--gold-lux);
+
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    animation: pulseGlow 2s infinite ease-in-out;
+}
+
+/* =========================================================
+   PULSE GLOW APRIMORADO
+========================================================= */
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.2), inset 0 0 5px rgba(212, 175, 55, 0.1);
+        text-shadow: 0 0 5px var(--gold-lux);
+    }
+    50% {
+        border-color: var(--gold-lux);
+        box-shadow: 0 0 35px var(--gold-glow), inset 0 0 15px var(--gold-glow);
+        text-shadow: 0 0 15px #fff;
+    }
+}
+
+/* =========================================================
+   CHART
+========================================================= */
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 310px;
+    margin-top: 25px;
+}
+
+.chart-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 180px;
+    height: 180px;
+
+    background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+    filter: blur(40px);
+
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    
+    animation: breathHolo 4s infinite alternate;
+}
+
+@keyframes breathHolo {
+    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+}
+
+/* =========================================================
+   WIDE CARD
+========================================================= */
+.wide-card {
+    width: 100%;
+    max-width: 1000px;
+    padding: 50px;
+
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-top: 2px solid var(--border-lux);
+    border-radius: 28px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(255,255,255,0.02);
+}
+
+.wide-header {
+    margin-bottom: 40px;
+}
+
+.wide-card h2 {
+    margin-bottom: 8px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* =========================================================
+   APRESENTAÇÃO
+========================================================= */
+.text-center {
+    text-align: center;
+}
+
+.main-title {
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    font-size: 32px;
+
+    background: linear-gradient(120deg, #ffffff, var(--primary-neon));
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    margin-top: 40px;
+}
+
+.about-box {
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.about-box h3 {
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.about-box p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.about-icon {
+    margin-bottom: 20px;
+    font-size: 36px;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+}
+
+.highlight-box {
+    border-color: rgba(212, 175, 55, 0.3);
+    background: linear-gradient(
+        135deg,
+        rgba(212, 175, 55, 0.05),
+        rgba(0, 0, 0, 0.4)
+    );
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+.highlight-box:hover {
+    transform: translateY(-8px) scale(1.03);
+    border-color: var(--gold-lux);
+    box-shadow: 0 15px 40px var(--gold-glow);
+}
+
+.highlight-box h3 {
+    color: var(--gold-lux);
+    text-shadow: 0 0 15px var(--gold-glow);
+}
+
+/* =========================================================
+   RESULTADOS
+========================================================= */
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+    list-style: none;
+}
+
+.results-list li {
+    color: #e2e8f0;
+    font-size: 13.5px;
+    line-height: 1.5;
+}
+
+.results-list strong {
+    color: var(--primary-neon);
+    text-shadow: 0 0 8px var(--primary-glow);
+}
+
+/* =========================================================
+   WEATHER GRID (FLUTUANTE)
+========================================================= */
+.weather-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.weather-box {
+    padding: 35px 25px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    
+    /* Levitação para manter o tema holográfico */
+    animation: floatCard 4s ease-in-out infinite alternate;
+    
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Alternando delays para efeito desordenado bonito */
+.weather-box:nth-child(2) { animation-delay: -1s; }
+.weather-box:nth-child(3) { animation-delay: -2s; }
+
+.weather-box:hover {
+    animation-play-state: paused;
+    transform: translateY(-10px) scale(1.05);
+
+    background: rgba(46, 213, 115, 0.05);
+    border-color: var(--primary-neon);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 20px var(--primary-glow);
+}
+
+.box-icon {
+    margin-bottom: 15px;
+    font-size: 32px;
+    filter: drop-shadow(0 0 15px rgba(255,255,255,0.4));
+}
+
+.weather-box h3 {
+    margin-bottom: 10px;
+
+    color: var(--primary-neon);
+
+    font-family: monospace;
+    font-size: 38px;
+    font-weight: 700;
+
+    text-shadow: 0 0 20px var(--primary-glow), 0 0 5px #fff;
+}
+
+/* =========================================================
+   RECOMENDAÇÕES
+========================================================= */
+.recommendation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    list-style: none;
+}
+
+.recommendation-list li {
+    position: relative;
+    padding: 22px 28px;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 4px solid var(--gold-lux);
+    border-radius: 16px;
+
+    color: #e2e8f0;
+    font-size: 14px;
+    line-height: 1.7;
+
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+/* Fundo luminoso cibernético passando no item */
+.recommendation-list li::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    transition: 0.5s;
+}
+
+.recommendation-list li:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5), inset 5px 0 15px var(--gold-glow);
+}
+
+.recommendation-list li:hover::before {
+    left: 100%;
+}
+
+.loading-rec {
+    color: var(--text-muted) !important;
+    border-left-color: var(--text-muted) !important;
+    font-style: italic;
+}
+
+/* =========================================================
+   ANIMAÇÃO SLIDE
+========================================================= */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* =========================================================
+   CALCULADORA PREMIUM FUTURISTA
+========================================================= */
+.calc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.calc-box {
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s;
+}
+
+.calc-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold-lux);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 0 15px var(--gold-glow);
+}
+
+.calc-box h3 {
+    margin-bottom: 20px;
+    color: var(--primary-neon);
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.input-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.premium-input {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: var(--primary-neon); /* Fonte neon digitando */
+    font-family: monospace;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.premium-input:focus {
+    border-color: var(--primary-neon);
+    box-shadow: 0 0 15px var(--primary-glow), inset 0 0 10px var(--primary-glow);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff; /* Muda pra branco quando focado */
+}
+
+/* Ocultar as setas nos inputs numéricos para visual mais limpo */
+.premium-input::-webkit-outer-spin-button,
+.premium-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+@media (max-width: 1024px) {
+    .dashboard-container { gap: 25px; }
+    .card { width: 100%; min-height: auto; }
+}
+
+@media (max-width: 768px) {
+    .navbar { padding: 0 4%; }
+    .nav-links { display: none; }
+    .wide-card { padding: 30px 20px; }
+    .weather-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+}

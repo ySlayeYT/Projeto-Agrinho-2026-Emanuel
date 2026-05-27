@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoSafra Tracker | High-End Sustainability</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="animated-bg-container">
+        <div class="moving-background" id="movingBg"></div>
+        <div class="tech-overlay"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            <span class="logo-icon">🌱</span> EcoSafra <span class="logo-highlight">Pro</span>
+        </div>
+        <div class="nav-links">
+            <a href="#sobre" class="nav-item">Sobre</a>
+            <a href="#dashboard" class="nav-item">Dashboard</a>
+            <a href="#analise" class="nav-item">Análise Geral</a>
+            <a href="#recomendacoes" class="nav-item">Recomendações</a>
+            <a href="#calculadora" class="nav-item">Calculadora</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+
+        <section id="sobre" class="page-section visual-reveal">
+            <div class="wide-card presentation-card">
+                <div class="wide-header text-center">
+                    <span class="badge-pro">PROPÓSITO</span>
+                    <h2 class="main-title">A Inteligência por trás da Ecoeficiência Agrícola</h2>
+                    <p class="section-subtitle">O EcoSafra Pro transforma dados complexos de manejo em indicadores estratégicos para uma produção sustentável e de alto rendimento.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-box">
+                        <div class="about-icon">🎯</div>
+                        <h3>Nossa Finalidade</h3>
+                        <p>Capacitar produtores e gestores agro a monitorar, avaliar e otimizar o impacto ambiental de suas propriedades. Através de algoritmos avançados, unificamos métricas essenciais de solo, água e energia em um único ecossistema integrado.</p>
+                    </div>
+
+                    <div class="about-box highlight-box">
+                        <div class="about-icon">📈</div>
+                        <h3>Resultados Entrega</h3>
+                        <p>Ao atingir o equilíbrio ideal do IES (Índice de Equilíbrio Sustentável), sua propriedade conquista:</p>
+                        <ul class="results-list">
+                            <li>🔹 <strong>Redução de Custos:</strong> Otimização de insumos e transição para matrizes limpas.</li>
+                            <li>🔹 <strong>Valor de Mercado:</strong> Alinhamento total com as exigências globais de conformidade ESG.</li>
+                            <li>🔹 <strong>Longevidade do Solo:</strong> Preservação do ativo mais valioso da fazenda a longo prazo.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculadora" class="page-section visual-reveal">
+    <div class="wide-card">
+        <div class="wide-header text-center">
+            <span class="badge-pro">FERRAMENTA</span>
+            <h2 class="main-title">Calculadora de Métricas Brutas</h2>
+            <p class="section-subtitle">Insira os dados reais da sua propriedade. Nós calculamos as porcentagens e aplicamos automaticamente no Dashboard.</p>
+        </div>
+        
+        <div class="calc-grid">
+            <div class="calc-box">
+                <h3>💧 Eficiência Hídrica</h3>
+                <div class="input-group">
+                    <label>Área com Irrigação Inteligente (ha):</label>
+                    <input type="number" id="calcWaterInt" class="premium-input" placeholder="Ex: 150">
+                </div>
+                <div class="input-group">
+                    <label>Área Total Irrigada (ha):</label>
+                    <input type="number" id="calcWaterTotal" class="premium-input" placeholder="Ex: 200">
+                </div>
+            </div>
+
+            <div class="calc-box">
+                <h3>🔬 Controle Biológico</h3>
+                <div class="input-group">
+                    <label>Gasto com Defensivos Biológicos (R$):</label>
+                    <input type="number" id="calcBio" class="premium-input" placeholder="Ex: 15000">
+                </div>
+                <div class="input-group">
+                    <label>Gasto Total com Defensivos (R$):</label>
+                    <input type="number" id="calcBioTotal" class="premium-input" placeholder="Ex: 50000">
+                </div>
+            </div>
+
+            <div class="calc-box">
+                <h3>🌱 Rotação de Culturas</h3>
+                <div class="input-group">
+                    <label>Área em Rotação (ha):</label>
+                    <input type="number" id="calcRotArea" class="premium-input" placeholder="Ex: 300">
+                </div>
+                <div class="input-group">
+                    <label>Área Total Plantada (ha):</label>
+                    <input type="number" id="calcRotTotal" class="premium-input" placeholder="Ex: 400">
+                </div>
+            </div>
+
+            <div class="calc-box">
+                <h3>⚡ Matriz Energética</h3>
+                <div class="input-group">
+                    <label>Energia Limpa Gerada (kWh):</label>
+                    <input type="number" id="calcEnergyClean" class="premium-input" placeholder="Ex: 4500">
+                </div>
+                <div class="input-group">
+                    <label>Consumo Total (kWh):</label>
+                    <input type="number" id="calcEnergyTotal" class="premium-input" placeholder="Ex: 10000">
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center" style="margin-top: 40px;">
+            <button id="btnApplyCalc" class="btn-report">
+                <span>Calcular e Enviar para Dashboard</span>
+                <div class="btn-glow"></div>
+            </button>
+        </div>
+    </div>
+</section>
+
+        <section id="dashboard" class="page-section visual-reveal">
+            <div class="dashboard-container">
+                
+                <div class="card premium-card-left">
+                    <div class="card-header">
+                        <div class="brand-zone">
+                            <span class="brand-name">🌱 EcoSafra</span>
+                            <span class="badge-pro">PRO</span>
+                        </div>
+                        <div class="subtitle">Levantamento Inteligente de Sustentabilidade Agro</div>
+                    </div>
+
+                    <div class="metric-group">
+                        
+                        <div class="metric-item">
+                            <div class="metric-info">
+                                <label for="waterUsage">Uso Eficiente de Água</label>
+                                <span class="slider-value" id="waterValue">78%</span>
+                            </div>
+                            <div class="slider-wrapper water-track">
+                                <input type="range" min="0" max="100" value="78" id="waterUsage" class="custom-slider">
+                                <div class="slider-progress"></div>
+                            </div>
+                        </div>
+
+                        <div class="metric-item">
+                            <div class="metric-info">
+                                <label for="pesticideUsage">Controle Biológico (vs Químico)</label>
+                                <span class="slider-value" id="pesticideValue">54%</span>
+                            </div>
+                            <div class="slider-wrapper bio-track">
+                                <input type="range" min="0" max="100" value="54" id="pesticideUsage" class="custom-slider">
+                                <div class="slider-progress"></div>
+                            </div>
+                        </div>
+
+                        <div class="metric-item">
+                            <div class="metric-info">
+                                <label for="cropRotation">Rotação de Culturas e Solo</label>
+                                <span class="slider-value" id="rotationValue">86%</span>
+                            </div>
+                            <div class="slider-wrapper solo-track">
+                                <input type="range" min="0" max="100" value="86" id="cropRotation" class="custom-slider">
+                                <div class="slider-progress"></div>
+                            </div>
+                        </div>
+
+                        <div class="metric-item">
+                            <div class="metric-info">
+                                <label for="solarEnergy">Matriz Energética Limpa</label>
+                                <span class="slider-value" id="solarValue">33%</span>
+                            </div>
+                            <div class="slider-wrapper energy-track">
+                                <input type="range" min="0" max="100" value="33" id="solarEnergy" class="custom-slider">
+                                <div class="slider-progress"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button id="calculateBtn" class="btn-report">
+                        <span>Calcular Sustentabilidade</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                </div>
+
+                <div class="card right-card premium-card-right">
+                    <div class="ies-header">
+                        <div class="ies-title">Índice de Equilíbrio (IES)</div>
+                        <div class="ies-score-container">
+                            <div class="ies-score" id="iesScore">0</div>
+                            <div class="ies-max">/100</div>
+                        </div>
+                        <div class="status-badge" id="levelMetric">Inicializando</div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-glow"></div>
+                        <canvas id="sustainabilityChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="analise" class="page-section visual-reveal">
+            <div class="wide-card">
+                <div class="wide-header">
+                    <h2>📊 Diagnóstico Detalhado por Indicador</h2>
+                    <p class="section-subtitle">Métricas calculadas em tempo real com processamento de dados local.</p>
+                </div>
+                
+                <div class="weather-grid">
+                    <div class="weather-box">
+                        <div class="box-icon">💧</div>
+                        <h3 id="waterMetric">0%</h3>
+                        <p>Eficiência Hídrica</p>
+                    </div>
+                    <div class="weather-box">
+                        <div class="box-icon">🌿</div>
+                        <h3 id="impactMetric">0%</h3>
+                        <p>Preservação Impacto</p>
+                    </div>
+                    <div class="weather-box">
+                        <div class="box-icon">⚡</div>
+                        <h3 id="energyMetric">0%</h3>
+                        <p>Autonomia Limpa</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recomendacoes" class="page-section visual-reveal">
+            <div class="wide-card">
+                <div class="wide-header">
+                    <h2>💡 Recomendações Inteligentes para a Propriedade</h2>
+                    <p class="section-subtitle">Ações sugeridas por IA para elevar o seu Índice de Equilíbrio (IES).</p>
+                </div>
+                
+                <ul id="recommendationList" class="recommendation-list">
+                    <li class="loading-rec">Aguardando análise de dados... Ajuste os parâmetros e clique em Calcular.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
